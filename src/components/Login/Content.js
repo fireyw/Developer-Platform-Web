@@ -68,11 +68,11 @@ const Content = () => {
   }, []);
 
   useEffect(() => {
-    if (sessionStorage.getItem('userInfo')) {
-      const savedUserInfo = JSON.parse(sessionStorage.getItem('userInfo'));
-
+    if (sessionStorage.getItem('userInfo')) {      
       (async () => {
         try {
+          const savedUserInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+          
           const { data: { result, data } } = await axios({
             url: `${apiUrl}/api/user`,
             method: 'POST',
