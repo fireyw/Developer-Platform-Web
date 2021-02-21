@@ -1,0 +1,81 @@
+{
+  "name": "react-default",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.1",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.0.0",
+    "express": "^4.17.1",
+    "npm-run-all": "^4.1.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.2",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "sweetalert2": "^10.15.5",
+    "web-vitals": "^1.1.0"
+  },
+  "scripts": {
+    "start": "run-script-os",
+    "start:win32": "set NODE_ENV=production&& node dist",
+    "start:default": "NODE_ENV=production node dist",
+    "dev": "run-script-os",
+    "dev:win32": "npm-run-all --parallel dev_win32:**",
+    "dev:default": "npm-run-all --parallel dev_default:**",
+    "dev_win32:server": "set NODE_ENV=development&& nodemon --watch server --exec babel-node server",
+    "dev_win32:client": "react-scripts start",
+    "dev_default:server": "NODE_ENV=development nodemon --watch server --exec babel-node server",
+    "dev_default:client": "react-scripts start",
+    "build": "run-script-os",
+    "build:win32": "react-scripts build && babel server --out-dir dist && move build dist/public",
+    "build:default": "rm -rf dist build && react-scripts build && babel server --out-dir dist && mv build dist/public",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.17",
+    "@babel/core": "^7.12.17",
+    "@babel/node": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "babel-loader": "^8.1.0",
+    "nodemon": "^2.0.7",
+    "run-script-os": "^1.1.5",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
