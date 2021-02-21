@@ -4,7 +4,7 @@ import cors from 'cors';
 import { createServer } from 'http';
 import path from 'path';
 
-const PORT = +process.env.PORT || 4000;
+const PORT = process.env.PORT ? +process.env.PORT : 4000;
 
 const app = express();
 const server = createServer(app);
