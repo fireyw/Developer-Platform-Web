@@ -87,6 +87,7 @@ const Content = () => {
             dispatch(setUserInfo(data));
           }
         } catch (err) {
+          sessionStorage.clear();
           console.error(err);
         }
       })();
