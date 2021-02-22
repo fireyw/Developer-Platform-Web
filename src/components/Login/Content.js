@@ -17,6 +17,19 @@ const Content = () => {
     const userId = _userId.current.children[1].children[0];
     const password = _password.current.children[1].children[0];
 
+    //test
+    if(userId.value==='' && password.value===''){
+      Swal.fire({
+        icon:'error',
+        title:'정보입력',
+        text:'계정정보를 입력하세요',
+        didOpen: ()=> document.body.className = '',
+        didClose: ()=>userId.focus()
+      })
+      return;
+    }
+
+
     if (userId.value === '') {
       Swal.fire({
         icon: 'error',
