@@ -6,7 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { createLogger } from 'redux-logger';
 import App from './App';
 import rootReducer from './modules';
-import './styles/globla.css';
+import './styles/global.css';
 
 const logger = createLogger();
 const store = createStore(rootReducer, composeWithDevTools(
