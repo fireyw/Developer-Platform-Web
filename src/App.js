@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './pages/Login';
 import Main from './pages/Main';
 
@@ -7,10 +7,14 @@ const App = () =>  {
   const userInfo = useSelector(state => state.common.userInfo);
 
   return (
-    <BrowserRouter>
-      {!userInfo.userId && <Route exact path='/' component={Login}/>}
-      {userInfo.userId && <Route exact path='/' component={Main}/>}
-    </BrowserRouter>
+    <Router>
+      <Switch>
+        {/* {!userInfo.userId &&  */}
+        <Route exact path='/' component={Main}/>
+        {/* {userInfo.userId &&  */}
+        <Route path='/login' component={Login}/>
+      </Switch>
+    </Router>
   );
 }
 

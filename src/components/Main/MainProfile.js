@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-const Content = () => {
+const MainProfile = () => {
   const userInfo = useSelector(state => state.common.userInfo);
 
   return (
@@ -37,4 +37,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default MainProfile;
